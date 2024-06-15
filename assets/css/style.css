@@ -38,13 +38,30 @@
         cursor: pointer;
     }
 
-    div.cell.circle {
+    div.cell.circle,
+    .circle-hover:hover::after {
+        content: "O";
         font-size: 4rem;
         color: darkmagenta;
     }
-
-    div.cell.x {
+    
+    div.cell.x,
+    .x-hover:hover::after {
+        content: "X";
         font-size: 4rem;
+    }
+
+    .x-hover:hover::after {
+        opacity: .69;
+    }
+
+    .circle-hover:hover::after {
+        opacity: .69;
+    }
+
+    .cell.circle,
+    .cell.x {
+        cursor: not-allowed;
     }
 
     .win {
