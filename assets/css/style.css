@@ -1,38 +1,64 @@
 *, *::after, *::before {
-    box-sizing: border-box;
-    color: rgba(13, 0, 255, 0.924);
-    background-color: #000;
+        box-sizing: border-box;
+        color: rgba(234, 255, 0, 0.924);
+        background-color: #000;
     }
     
     body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 90vh;
     }
 
     #header {
         position: relative;
-        margin: 0;
+        margin: 2rem 0rem;
     }
     
     .board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 300px;
     }
     
     .cell {
-    background-color: #fff;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+        background-color: #000000;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
+
+    #border-bottom {
+        border-bottom: 3px solid yellow;
+    }
+
+    #border-bottom-border-right {
+        border-bottom: 3px solid yellow;
+        border-right: 3px solid yellow;
+    }
+
+    #border-right {
+        border-right: 3px solid yellow;
+    }
+
+    #winning-message {
+        
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+

@@ -8,21 +8,21 @@
 </head>
 <body>
     <h1 id="header">Tic Tac Toe</h1>
-    <div id="game-area" class="board">
-        <div data-index="1" class="cell">x</div>
-        <div data-index="2" class="cell">o</div>
-        <div data-index="3" class="cell">x</div>
-        <div data-index="4" class="cell">x</div>
-        <div data-index="5" class="cell">x</div>
-        <div data-index="6" class="cell">x</div>
-        <div data-index="7" class="cell">x</div>
+    <div id="board" class="board">
+        <div data-index="0" id="border-bottom-border-right" class="cell">x</div>
+        <div data-index="1" id="border-bottom-border-right" class="cell">x</div>
+        <div data-index="2" id="border-bottom" class="cell">o</div>
+        <div data-index="3" id="border-bottom-border-right" class="cell">x</div>
+        <div data-index="4" id="border-bottom-border-right" class="cell">x</div>
+        <div data-index="5" id="border-bottom" class="cell">x</div>
+        <div data-index="6" id="border-right" class="cell">x</div>
+        <div data-index="7" id="border-right" class="cell">x</div>
         <div data-index="8" class="cell">x</div>
-        <div data-index="9" class="cell">x</div>
     </div>
-    <div class="score-area"><span class="player-score">0</span><span class="computer-score">1</span></div>
-    <div class="winning-message">
+    <div class="score-area" id="scoreArea"><span class="player-score" id="playerScore">0</span><span class="computer-score" id="computerScore">1</span></div>
+    <div class="winning-message show" id="winningMessage">
         <h1>Player Wins</h1>
-        <button>Restart</button>
+        <button class="restart-btn" id="restartButton">Restart</button>
     </div>
     <script src="assets/js/script.js"></script>
 </body>
