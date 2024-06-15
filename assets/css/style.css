@@ -1,8 +1,38 @@
-* {
-   color: aliceblue; 
-   
-}
+*, *::after, *::before {
+    box-sizing: border-box;
+    color: rgba(13, 0, 255, 0.924);
+    background-color: #000;
+    }
+    
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    }
 
-body {
-    background-color: black;
-}
+    #header {
+        position: relative;
+        margin: 0;
+    }
+    
+    .board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    }
+    
+    .cell {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
