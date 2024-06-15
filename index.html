@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Tic Tac Toe</title>
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <script src="script.js"></script>
+    <div id="game-area">
+        <div data-index="1" class="cell">x</div>
+        <div data-index="2" class="cell">o</div>
+        <div data-index="3" class="cell">x</div>
+        <div data-index="4" class="cell">x</div>
+        <div data-index="5" class="cell">x</div>
+        <div data-index="6" class="cell">x</div>
+        <div data-index="7" class="cell">x</div>
+        <div data-index="8" class="cell">x</div>
+        <div data-index="9" class="cell">x</div>
+    </div>
+    <div class="score-area"><span class="player-score">0</span><span class="computer-score">1</span></div>
+    <div class="winning-message">
+        <h1>Player Wins</h1>
+        <button>Restart</button>
+    </div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
