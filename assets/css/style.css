@@ -35,7 +35,81 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
+
+    div.cell.circle {
+        font-size: 4rem;
+        color: darkmagenta;
+    }
+
+    div.cell.x {
+        font-size: 4rem;
+    }
+
+    .win {
+        position: absolute;
+        background-color: red;
+    }
+
+    .win-horizontal-1 {
+        content: '';
+        width: 18rem;
+        height: 1%;
+        top: 31%;
+    }
+
+    .win-horizontal-2 {
+        content: '';
+        width: 18rem;
+        height: 1%;
+        top: 46.5%;
+    }
+
+    .win-horizontal-3 {
+        content: '';
+        width: 18rem;
+        height: 1%;
+        top: 61.5%;
+    }
+
+    .win-vertical-1 {
+        content: '';
+        width: 1%;
+        height: 18rem;
+        left: 29.5%;
+    }
+
+    .win-vertical-2 {
+        content: '';
+        width: 1%;
+        height: 18rem;
+        left: 49.2%;
+    }
+
+    .win-vertical-3 {
+        content: '';
+        width: 1%;
+        height: 18rem;
+        left: 69.5%;
+    }
+
+    .win-diagonal-1 {
+        content: '';
+        width: 18rem;
+        height: 1%;
+        bottom: 53%;
+        transform: skewY(-45deg);
+    }
+    
+    .win-diagonal-2 {
+        content: '';
+        width: 18rem;
+        height: 1%;
+        top: 46%;
+        transform: skewY(45deg);
+    }
+
 
     .score-area {
         display: flex;
@@ -44,7 +118,7 @@
         height: 1.5;
         padding: .25em;
         margin-top: 3rem;
-        border-top: 3px solid rgb(171, 0, 171);
+        border-bottom: 3px solid rgb(171, 0, 171);
     }
 
     .score-area > span {
