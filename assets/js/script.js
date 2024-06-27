@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let playerScore = 0;
     let computerScore = 0;
 
+    // X plays first 
+    let circleTurn = false;
+    let playerTurn = true; 
+
     // Players marks
     const X_CLASS = 'x';
     const CIRCLE_CLASS = 'circle';
@@ -40,5 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
      // restart button has the same action
      restartButton.addEventListener('click', startGame)
+
+     // startGame
+     function startGame() {
+        circleTurn = false;
+        playerTurn = true;
+        board.forEach(cell => {
+            cell.classList.remove(X_CLASS, CIRCLE_CLASS);
+            cell.removeEventListener('click', handleClick);
+            cell.addEventListener('click', handleClick, { once:true });
+        });
+
+
+        document.getElementById('messageBackground').classList.remove('show');
+    }
+
+
+     // click handler 
+     // place mark
+     // computer turn
+     // swap turns
+     // board hover function
+
+     // check for win
+     // check for draw
+     // endGame
+     // update score
+
     
 });

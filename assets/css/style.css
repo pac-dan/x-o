@@ -52,16 +52,16 @@
     }
     
     div.cell.x,
-    .x-hover:hover::after {
+    .board.x-hover:hover::after {
         content: "X";
         font-size: 4rem;
     }
 
-    .x-hover:hover::after {
+    .board.x-hover:hover::after {
         opacity: .69;
     }
 
-    .circle-hover:hover::after {
+    .board.circle-hover:hover::after {
         opacity: .69;
     }
 
