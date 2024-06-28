@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Game elements
-    const board= document.querySelectorAll('[data-cell]');
-    const messageBackgroundElement = document.getElementById('messageBackground')
+    const board = document.querySelectorAll('[data-cell]');
+    const boardElement = document.querySelector('.board');
+    const messageBackgroundElement = document.getElementById('messageBackground');
     const welcomeMessageElement = document.getElementById('welcomeMessageBackground');
     const startButtonElement = document.getElementById('startButton');
     const restartButtonElement = document.getElementById('restartButton')
@@ -16,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // X plays first 
     let circleTurn = false;
-    let playerTurn = true; 
 
     // Players marks
     const X_CLASS = 'x';
     const CIRCLE_CLASS = 'circle';
+
+    const hoverCircle = 'circle-hover';
+    const hoverX = 'x-hover';
 
     // Winning Combinations
     const WINNING_COMBINATIONS = [
@@ -32,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [3, 6, 9],
         [1, 5, 9],
         [7, 5, 3]
-    ]
+    ];
 
 
      // welcome message 
@@ -43,21 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
      });
 
      // restart button has the same action
-     restartButton.addEventListener('click', startGame)
+     restartButton.addEventListener('click', startGame);
+
+     function setBoardHoverClass() {
+        board.classList.remove(hoverCircle, hoverX)
+        if (circleTurn) {
+            board.classList.add(hoverCircle)
+        } else {
+            board.classList.add(hoverX)
+        }
+     }
 
      // startGame
      function startGame() {
         circleTurn = false;
-        playerTurn = true;
         board.forEach(cell => {
-            cell.classList.remove(X_CLASS, CIRCLE_CLASS);
+            cell.classList.remove(X_CLASS, CIRCLE_CLASS, 'x-hover', 'circle-hover');
             cell.removeEventListener('click', handleClick);
             cell.addEventListener('click', handleClick, { once:true });
         });
 
-
+        setBoardHoverClass();
         document.getElementById('messageBackground').classList.remove('show');
     }
+
+    function handleClick(e) {
+        const cell = e.target;
+        const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
+        placeMark(cell, currentClass);
+        //checkwin
+        //draw
+        swapTurns();
+        setBoardHoverClass();
+    }
+
+    function placeMark(cell, currentClass) {
+        cell.classList.add(currentClass);
+    }
+
+    function swapTurns(){
+        circleTurn = !circleTurn;
+    }
+
+
 
 
      // click handler 
