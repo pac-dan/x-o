@@ -1,3 +1,8 @@
+//click-sounds
+//win-sounds
+//strike-through
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Game elements
     const boardCells = document.querySelectorAll('.cell');
@@ -119,5 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         messageBackgroundElement.classList.add('show');
     }
+
 
 });
