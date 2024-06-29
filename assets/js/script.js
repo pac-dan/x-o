@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    // This Now Works 
     function setCellHoverClass(e) {
         const cell = e.target;
         if (!cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)) {
@@ -117,4 +119,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         messageBackgroundElement.classList.add('show');
     }
+
 });
