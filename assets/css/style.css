@@ -1,203 +1,208 @@
 *, *::after, *::before {
-        box-sizing: border-box;
-        color: rgba(234, 255, 0, 0.924);
-        background-color: #000;
-    }
-    
-    body {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 90vh;
-    }
-
-    h2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #header {
-        position: relative;
-        margin: 2rem 0rem;
-    }
-    
-    .board {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
-        width: 300px;
-    }
-    
-    .cell {
-        background-color: #000000;
-        width: 100px;
-        height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .cell.circle::after {
-        content: "O";
-        font-size: 4rem;
-        color: darkmagenta;
-    }
-    
-    .cell.x::after {
-        content: "X";
-        font-size: 4rem;
-    }
-
-    .x-hover:hover::after {
-        opacity: .69;
-    }
-
-    .circle-hover:hover::after {
-        opacity: .69;
-    }
-
-    .cell.circle,
-    .cell.x {
-        cursor: not-allowed;
-    }
-
-    .win {
-        position: absolute;
-        background-color: red;
-    }
-
-    .win-horizontal-1 {
-        content: '';
-        width: 18rem;
-        height: 1%;
-        top: 31%;
-    }
-
-    .win-horizontal-2 {
-        content: '';
-        width: 18rem;
-        height: 1%;
-        top: 46.5%;
-    }
-
-    .win-horizontal-3 {
-        content: '';
-        width: 18rem;
-        height: 1%;
-        top: 61.5%;
-    }
-
-    .win-vertical-1 {
-        content: '';
-        width: 1%;
-        height: 18rem;
-        left: 29.5%;
-    }
-
-    .win-vertical-2 {
-        content: '';
-        width: 1%;
-        height: 18rem;
-        left: 49.2%;
-    }
-
-    .win-vertical-3 {
-        content: '';
-        width: 1%;
-        height: 18rem;
-        left: 69.5%;
-    }
-
-    .win-diagonal-1 {
-        content: '';
-        width: 18rem;
-        height: 1%;
-        bottom: 53%;
-        transform: skewY(-45deg);
-    }
-    
-    .win-diagonal-2 {
-        content: '';
-        width: 18rem;
-        height: 1%;
-        top: 46%;
-        transform: skewY(45deg);
-    }
-
-
-    .score-area {
-        display: flex;
-        justify-content: space-between;
-        width: 43%;
-        height: 1.5;
-        padding: .25em;
-        margin-top: 3rem;
-        border-bottom: 3px solid rgb(171, 0, 171);
-    }
-
-    .score-area > span {
-        display: flex;
-    }
-
-    .border-bottom {
-        border-bottom: 3px solid yellow;
-    }
-
-    .border-bottom-border-right {
-        border-bottom: 3px solid yellow;
-        border-right: 3px solid yellow;
-    }
-
-    .border-right {
-        border-right: 3px solid yellow;
-    }
-
-    .message-background {
-        background-color: rgba(122, 122, 122, 0.69);
-        position: fixed;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 99;
-    }
-
-    .message-background.show {
-        display: flex;
-    }
-
-    .winning-message {
-        display: flex;
-        flex-direction: column;
-        border: 3px solid yellow;
-        padding: 2rem;
-    }
-
-    .restart-btn {
-        background-color: darkmagenta;
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        height: 2rem;
-        width: 5rem;
-        border: 3px solid yellow;
-        font-size: .9rem;
-        padding: .3em .15em;
-    }
-
-    .restart-btn:hover {
-        background-color: yellow;
-        border: 3px solid darkmagenta;
-        color: darkmagenta;
-    }
-
+    box-sizing: border-box;
+    color: rgba(234, 255, 0, 0.924);
+    background-color: #000;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+  }
+  
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #header {
+    position: relative;
+    margin: 2rem 0rem;
+  }
+  
+  .board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+  }
+  
+  .cell {
+    background-color: #000000;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .cell.circle::after {
+    content: "O";
+    font-size: 4rem;
+    color: darkmagenta;
+  }
+  
+  .cell.x::after {
+    content: "X";
+    font-size: 4rem;
+  }
+  
+  .x-hover::after {
+    content: "X";
+    font-size: 4rem;
+    opacity: .69;
+  }
+  
+  .circle-hover::after {
+    content: "O";
+    font-size: 4rem;
+    color: darkmagenta;
+    opacity: .69;
+  }
+  
+  .cell.circle,
+  .cell.x {
+    cursor: not-allowed;
+  }
+  
+  .win {
+    position: absolute;
+    background-color: red;
+  }
+  
+  .win-horizontal-1 {
+    content: '';
+    width: 18rem;
+    height: 1%;
+    top: 31%;
+  }
+  
+  .win-horizontal-2 {
+    content: '';
+    width: 18rem;
+    height: 1%;
+    top: 46.5%;
+  }
+  
+  .win-horizontal-3 {
+    content: '';
+    width: 18rem;
+    height: 1%;
+    top: 61.5%;
+  }
+  
+  .win-vertical-1 {
+    content: '';
+    width: 1%;
+    height: 18rem;
+    left: 29.5%;
+  }
+  
+  .win-vertical-2 {
+    content: '';
+    width: 1%;
+    height: 18rem;
+    left: 49.2%;
+  }
+  
+  .win-vertical-3 {
+    content: '';
+    width: 1%;
+    height: 18rem;
+    left: 69.5%;
+  }
+  
+  .win-diagonal-1 {
+    content: '';
+    width: 18rem;
+    height: 1%;
+    bottom: 53%;
+    transform: skewY(-45deg);
+  }
+  
+  .win-diagonal-2 {
+    content: '';
+    width: 18rem;
+    height: 1%;
+    top: 46%;
+    transform: skewY(45deg);
+  }
+  
+  .score-area {
+    display: flex;
+    justify-content: space-between;
+    width: 43%;
+    height: 1.5;
+    padding: .25em;
+    margin-top: 3rem;
+    border-bottom: 3px solid rgb(171, 0, 171);
+  }
+  
+  .score-area > span {
+    display: flex;
+  }
+  
+  .border-bottom {
+    border-bottom: 3px solid yellow;
+  }
+  
+  .border-bottom-border-right {
+    border-bottom: 3px solid yellow;
+    border-right: 3px solid yellow;
+  }
+  
+  .border-right {
+    border-right: 3px solid yellow;
+  }
+  
+  .message-background {
+    background-color: rgba(122, 122, 122, 0.69);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+  }
+  
+  .message-background.show {
+    display: flex;
+  }
+  
+  .winning-message {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid yellow;
+    padding: 2rem;
+  }
+  
+  .restart-btn,
+  .start-btn {
+    background-color: darkmagenta;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 2rem;
+    width: 5rem;
+    border: 3px solid yellow;
+    font-size: .9rem;
+    padding: .3em .15em;
+  }
+  
+  .restart-btn:hover,
+  .start-btn:hover {
+    background-color: yellow;
+    border: 3px solid darkmagenta;
+    color: darkmagenta;
+  }
