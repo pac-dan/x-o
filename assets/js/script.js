@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const welcomeMessageElement = document.getElementById('welcomeMessageBackground');
     const winningMessageElement = document.getElementById('winningMessage');
     const winningMessageTextElement = winningMessageElement.querySelector('h2');
+    const boardElement = document.querySelector('.board');
     
     //sounds
     const clickSound = new Audio('assets/sounds/cell-click.mp3')
@@ -64,8 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.addEventListener('mouseout', removeCellHoverClass);
         });
         messageBackgroundElement.classList.remove('show');
+        clearWinStrikes();
     }
 
+    // handles which cell is clicked & which turn
     function handleClick(e) {
         const cell = e.target;
         const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
@@ -81,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // This Now Works 
+    
     function setCellHoverClass(e) {
         const cell = e.target;
         if (!cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)) {
@@ -103,15 +106,22 @@ document.addEventListener('DOMContentLoaded', () => {
         cell.classList.add(currentClass);
     }
 
+    
     function swapTurns() {
         circleTurn = !circleTurn;
     }
 
     function checkWin(currentClass) {
-        return WINNING_COMBINATIONS.some(combination => {
-            return combination.every(index => {
+        return WINNING_COMBINATIONS.some((combination, combinationIndex) => {
+            //change to const then create seperate loop and return
+            const hasWon = combination.every(index => {
                 return boardCells[index].classList.contains(currentClass);
             });
+            if (hasWon) {
+                drawWinStrike(combinationIndex);
+            }
+            return hasWon;
+
         });
     }
 
@@ -125,10 +135,49 @@ document.addEventListener('DOMContentLoaded', () => {
         if (draw) {
             winningMessageTextElement.innerText = 'Draw!';
         } else {
-            winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+            winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`;
         }
         gameOverSound.play();
         messageBackgroundElement.classList.add('show');
+    }
+
+    //to apply correct win strike 
+    function drawWinStrike(combinationIndex) {
+        const winStrike = document.createElement('div');
+        winStrike.classList.add('win');
+        switch(combinationIndex) {
+            case 0:
+                winStrike.classList.add('win-horizontal-1');
+                break;
+            case 1:
+                winStrike.classList.add('win-horizontal-2');
+                break;
+            case 2:
+                winStrike.classList.add('win-horizontal-3');
+                break;
+            case 3:
+                winStrike.classList.add('win-vertical-1');
+                break;
+            case 4:
+                winStrike.classList.add('win-vertical-2');
+                break;
+            case 5:
+                winStrike.classList.add('win-vertical-3');
+                break;
+            case 6:
+                winStrike.classList.add('win-diagonal-2');
+                break;
+            case 7:
+                winStrike.classList.add('win-diagonal-1');
+                break;
+        }
+        boardElement.appendChild(winStrike);
+    }
+
+    function clearWinStrikes() {
+        const winStrike = document.querySelectorAll('.win');
+        winStrike.forEach(winStrike => winStrike.remove());
+        
     }
 
 
