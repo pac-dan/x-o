@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const welcomeMessageElement = document.getElementById('welcomeMessageBackground');
     const winningMessageElement = document.getElementById('winningMessage');
     const winningMessageTextElement = winningMessageElement.querySelector('h2');
+    
+    //sounds
+    const clickSound = new Audio('assets/sounds/cell-click.mp3')
+    const gameOverSound = new Audio('assets/sounds/win-sound.mp3')
 
     // Score area
     //const playerScoreElement = document.getElementById('playerScore');
@@ -66,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cell = e.target;
         const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
         placeMark(cell, currentClass);
+        clickSound.play();
         if (checkWin(currentClass)) {
             endGame(false);
         } else if (isDraw()) {
@@ -122,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
         }
+        gameOverSound.play();
         messageBackgroundElement.classList.add('show');
     }
 
