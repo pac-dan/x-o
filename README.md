@@ -1,116 +1,214 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Daniel Johnston,
+# TIC TAC TOE BOARD GAME
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to my Tic Tac Toe Game!A fully functioning board game where the player "X" can play against the computer "O".
+with the computer placing completely random marks in the game it keeps every game fair!
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 14, 2024**
+Users of this game will learn how to strategize against the computer as they place their starting "X" mark in a different cell each game, with the computer placing truely random marks after each players turn this trains the player for all possible strategies. 
 
-## Gitpod Reminders
+# Features 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-`python3 -m http.server`
+1. **Home Page (index.html)**
 
-A blue button should appear to click: _Make Public_,
+   - **Welcome Message**: A brief introduction to Surf N' Sail surf school, welcoming visitors and providing an overview of what the school 
+    offers.
+   - **Navigation Menu**: Easy-to-use navigation menu to access different sections of the website including Locations, Booking.
+   - **Hero Image**: A captivating image of surfing to engage visitors right from the start.
+   - **About Us Section**: A brief description of the surf school, its mission, and what sets it apart from other surf schools.
+   - **Courses**: A description of our rentals and lessons offers, prices. With link to book.
 
-Another blue button should appear to click: _Open Browser_.
+2. **Locations Page (locations.html)**
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+   - **Beach Information**: Detailed descriptions of the various beaches where lessons are conducted. Information includes the location, features of the beach, and why it’s great for surfing.
+   - **Image Gallery**: A gallery showcasing high-quality images of each beach to give visitors a visual understanding of the beautiful locations.
 
-A blue button should appear to click: _Make Public_,
+3. **Booking Page (booking.html)**
 
-Another blue button should appear to click: _Open Browser_.
+   - **Booking Form**: A user-friendly form where visitors can select their preferred lesson type (group, summer camp, private), date, and time.
+   - **Hours Table**: A table feature that shows available times for lessons, helping users choose a convenient time.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+4. **Confirmation Page (confirmation.html)**
 
-To log into the Heroku toolbelt CLI:
+   - **Thank You Message**: A thank you note confirming the booking and providing any necessary follow-up information or instructions.
+   - **Contact Information**: Details on how to contact the surf school for any further queries or changes to the booking.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+5. **Responsive Design**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+   - **Mobile-Friendly Layout**: The website is fully responsive and optimized for mobile devices, ensuring a seamless experience on smartphones and tablets.
 
-------
+6. **Custom Styling (style.css)**
 
-## Release History
+   - **Consistent Branding**: The website uses a consistent color scheme, typography, and branding elements to create a professional and cohesive look.
+   - **User Experience Enhancements**: CSS animations and transitions improve user interaction and make the website more engaging.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+7. **Accessibility Features**
 
-**June 14, 2024,** Temporarily remove Mongo until key issue is resolved
+   - **Alt Text for Images**: All images include alt text to assist users who rely on screen readers. Some alt text is shown using a hidden span as images are loaded into the css file.
 
-**May 28 2024:** Fix Mongo and Links installs
+8. **Performance Optimizations**
 
-**April 26 2024:** Update node version to 16
+   - **Lazy Loading Images**: Images are lazy-loaded to improve initial load time and performance, especially on slower networks.
+   - **Minified CSS**: CSS files are minified to reduce file size and enhance loading speed.
 
-**September 20 2023:** Update Python version to 3.9.17.
+### Existing Features
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Navigation Bar__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - Featured on all three pages, the full responsive navigation bar includes links to the Logo, Home page, Location and Booking page and is identical in each page to allow for easy navigation(Color for HOME/LOCATION/BOOK NOW changed to white in booking page for visual reasons).  
+  - Nav Bar is also fixed so that it follows as you scroll so that user does not have to scroll up to change pages.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Nav Bar]()
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __The landing page image__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  - The landing includes a photograph with text overlay to allow the user to see exactly which location this site would be applicable to. 
+  - This section introduces the user to SURF N'SAIL with an eye catching animation to grab their attention.
+  - With the Book Now button in the landing image customers who know what they want and just want to book can do so without having to look anywhere else. Great uf the surf school is getting a customer to book online with bad connection on a beach.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Landing Page]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **About Us Section**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  - The About Us section will allow the user to get a quick understanding of who we are and what we do, as well as the benefits of Surfing with us at some of the most beautiful beaches in the world. 
+  - This user will see the value of what booking a lesson can do for their surfing. This should encourage the user to consider Booking a Private/Group Lesson to make improvements on their surfing or to start off and just get the basics. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![School Info]()
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- **Courses**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  - This section will allow the user to see exactly what Courses we have to offer, having Day/Weekend Rentals and Group/Private Lessons clearly displayed on the page.
+  - This section will be updated as these times change to keep the user up to date. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Courses]()
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- __The Footer__ 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  - The footer section includes links to the relevant social media sites for  SURF N'SAIL. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer is valuable to the user as it encourages them to keep connected via social media.
+  - The hover feature adds responsive touch for the user letting them know it is a clickable link.
+![Footer]()
 
-------
+- **Locations**
 
-## FAQ about the uptime script
+  - The Locations page will provide the user with supporting images to see what our Beaches and Waves look like. 
+  - This section is valuable to the user as they will be able to find directions to every beach we are established and teaching at. 
+  - With a colorful layout and high quality pictures users should be looking to book a lesson or get directions to come rent equipment.
+![Locations]()
 
-**Why have you added this script?**
+- **Book Now**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  - This page will allow the user to get Booked In with SURF N'SAIL to start their surfing journey with a strong knowledgable community. The user will be able specify if they would like to take part in Private, Group or Summer Camp Lessons. The user will be asked to submit their full name and email address. 
 
-**How will this affect me?**
+![Book Now]()
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**Confirmation Page**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+  - This page will inform users that they have succesfully booked and will recieve a confirmation to the users email address regarding specific booking times and conditions. Also leaving a contact number for any further questions.
+  - This is also a chance to thank the user for visiting our page and that we look forward to future surf!
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Features Left to Implement
 
-**So….?**
+- add alt attribute in <span> hidden element for images screen readers
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Testing 
 
-**Can I opt out?**
+In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-**Anything more?**
+If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+### Validator Testing 
 
-Happy coding!
+- **HTML**
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/#textarea)
+  - **index.html**     -- (https://validator.w3.org/nu/?doc=https%3A%2F%2Fpac-dan.github.io%2Fsurf-n-sail%2Findex.html) - 
+  - Relative file path -- (assets/validation-/homepage-val.png)
+  - **locations.html** -- (https://validator.w3.org/nu/?doc=https%3A%2F%2Fpac-dan.github.io%2Fsurf-n-sail%2Flocations.html) -
+  - Relative file path -- (assets/validation-/locationspage-val.png)
+
+  - **booking.html**   -- (https://validator.w3.org/nu/?doc=https%3A%2F%2Fpac-dan.github.io%2Fsurf-n-sail%2Fbooking.html) 
+  - Relative file path -- assets/validation-/bookingpage-val.png)
+
+  - **confirmation.html** -- (https://validator.w3.org/nu/?doc=https%3A%2F%2Fpac-dan.github.io%2Fsurf-n-sail%2Fconfirmation.html%3Ffirst_name%3DDaniel%26last_name%3DJohnston%26email_address%3Ddjjohnston98%2540hotmail.com%26age%3D5%26health%3D%26lesson_date%3D2024-05-23%26lesson_time%3D10%253A30%26lesson%3Dgroup) 
+  - Relative file path -- (assets/validation-/confirmationpage-val.png)
+
+
+- **CSS**
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+
+  - Relative file path for css validation screenshot -- (assets/validation-/css-validation.png)
+  - link to url css test -- (https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpac-dan.github.io%2Fsurf-n-sail%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+- Click Pages, Find Build and Deployment, select 'source'-'deploy from a branch'.
+- Find 'Select Branch'-'Main Branch' Click save.
+- Project now deployed and updates to new version when changes are pushed from gitpod --> github.
+
+
+The live link can be found here - https://pac-dan.github.io/surf-n-sail/
+
+
+## Credits 
+
+https://www.w3schools.com/
+https://kingdomwaves.com/
+https://fontawesome.com/
+https://www.pexels.com/search/surf/ 
+https://learn.codeinstitute.net/courses
+
+
+### Content 
+
+- I took inspiration from the love running website and then used to find useful html/css/javascript tags -- https://www.w3schools.com/
+- I also used a website created by the company i work for Kingdom Waves for some inspiration/content ideas -- https://kingdomwaves.com/
+
+
+### Media
+
+- I downloaded all photos from -- https://www.pexels.com/search/surf/ 
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/) 
+
+## testing table
+
+| action                                             |exp. behavior                           |pass / fail |
+|----------------------------------------------------|----------------------------------------|------------|
+|click logo                                          |load homepage                           |   pass     |
+|click locations                                     |load locations                          |   pass     |
+|click book now(top right nav link)                  |load book now page                      |   pass     |
+|click any book now button on home page              |go to booking page                      |   pass     |
+|click no booking needed button on home page         |go to home page                         |   pass     |
+|click banna in where to find us section             |load banna/locations                    |   pass     |
+|click inch in where to find us section              |load inch/locations                     |   pass     |
+|click castlegregory in where to find us section     |load castleg/locations                  |   pass     |
+|click brandonbay in where to find us section        |load brandonb/locations                 |   pass     |
+|click terms of service                              |load homepage                           |   pass     |
+|click privacy policy                                |load homepage                           |   pass     |
+|click any social media link in footer               |load corrosponding page                 |   pass     |
+|in mobile viewing click burger icon                 |open navlinks menu from right           |   pass     |
+|click any "get directions" button on locations page |google maps opens with correct location |   pass     |
+|form-booking section tested all fields for required |cannot submit form unless correct info  |   pass     |
+|confirmation page, click return to home page        |returns to home page                    |   pass     |
+
+
+**lighthouse testing**
+- **home**          - assets/images/home-desk.png
+                    - assets/images/home-mob.png
+
+- **locations**     - assets/images/locations-desk.png
+                    - assets/images/locations-mob.png
+
+- **booking**       - assets/images/booking-desk.png
+                    - assets/images/booking-mob.png
+
+- **confirmation**  - assets/images/confirm-desk.png
+                    - assets/images/confirm-mob.png
