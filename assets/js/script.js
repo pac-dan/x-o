@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameOverSound = new Audio('assets/sounds/win-sound.mp3')
 
     // Score area
-    //const playerScoreElement = document.getElementById('playerScore');
-    //const computerScoreElement = document.getElementById('computerScore');
+    const playerScoreElement = document.getElementById('playerScore');
+    const computerScoreElement = document.getElementById('computerScore');
 
     // Players starting stats
-    //let playerScore = 0;
-    //let computerScore = 0;
+    let playerScore = 0;
+    let computerScore = 0;
     let circleTurn = false;
 
     // Players marks
@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
         [6, 4, 2]
     ];
 
-    // Welcome message
-    welcomeMessageElement.classList.add('show');
-    startButtonElement.addEventListener('click', () => {
-        welcomeMessageElement.classList.remove('show');
-        startGame();
+   // Welcome message
+   welcomeMessageElement.classList.add('show');
+   startButtonElement.addEventListener('click', () => {
+     welcomeMessageElement.classList.remove('show');
+       startGame();
     });
 
     restartButtonElement.addEventListener('click', startGame);
@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             endGame(true);
         } else {
             swapTurns();
+            if (circleTurn) {
+                setTimeout(computerMove, 500);
+            }
         }
     }
  
@@ -100,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cell.classList.add(currentClass);
     }
 
-    
     function swapTurns() {
         circleTurn = !circleTurn;
     }
@@ -115,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 drawWinStrike(combinationIndex);
             }
             return hasWon;
-
         });
     }
 
@@ -125,11 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //add score update 
     function endGame(draw) {
         if (draw) {
             winningMessageTextElement.innerText = 'Draw!';
         } else {
-            winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`;
+            //if o wins increment score by 1 
+            if (circleTurn) {
+                winningMessageTextElement.innerText = "O Wins!"
+                computerScore++;
+                computerScoreElement.innerText = `Computer: ${computerScore}`;
+            } else {
+                    winningMessageTextElement.innerText = "X Wins!"
+                    playerScore++;
+                    playerScoreElement.innerText = `Player: ${playerScore}`;
+            }
         }
         gameOverSound.play();
         messageBackgroundElement.classList.add('show');
@@ -174,5 +185,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
-
+    function computerMove() {
+        //define an empty cell
+        const emptyCells = [...boardCells].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS));
+        //are there more moves left to make
+        if (emptyCells.length === 0) return;
+        const randomCell = Math.floor(Math.random() * emptyCells.length);
+        const cell = emptyCells[randomCell];
+        placeMark(cell, CIRCLE_CLASS);
+        clickSound.play();
+        if (checkWin(CIRCLE_CLASS)) {
+            endGame(false);
+        } else if (isDraw()) {
+            endGame(true);
+        } else {
+            swapTurns();
+        }
+    }
 });
