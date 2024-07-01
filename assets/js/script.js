@@ -1,9 +1,5 @@
-//click-sounds
-//win-sounds
-//strike-through
-
-
 document.addEventListener('DOMContentLoaded', () => {
+    
     // Game elements
     const boardCells = document.querySelectorAll('.cell');
     const startButtonElement = document.getElementById('startButton');
@@ -82,9 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             swapTurns();
         }
     }
-
-
-    
+ 
     function setCellHoverClass(e) {
         const cell = e.target;
         if (!cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)) {
