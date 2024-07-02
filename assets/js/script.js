@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             swapTurns();
             if (circleTurn) {
+                disablePlayerClicks();
                 setTimeout(computerMove, timeOutSpeed);
             }
         }
@@ -211,6 +212,21 @@ document.addEventListener('DOMContentLoaded', () => {
             endGame(true);
         } else {
             swapTurns();
+            enablePlayerClicks();
         }
+    }
+
+    function disablePlayerClicks() {
+        boardCells.forEach(cell => {
+            cell.removeEventListener('click', handleClick);
+        });
+    }
+
+    function enablePlayerClicks() {
+        boardCells.forEach(cell => {
+            if (!cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)) {
+            cell.addEventListener('click', handleClick, { once:true });
+            }
+        });
     }
 });
