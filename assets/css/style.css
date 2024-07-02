@@ -19,6 +19,11 @@
     align-items: center;
   }
   
+  h3 {
+    display: flex;
+    justify-content: center;
+  }
+
   #header {
     position: relative;
     margin: 2rem 0rem;

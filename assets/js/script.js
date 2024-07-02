@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleClick(e) {
         const cell = e.target;
         const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
+        const timeOutSpeed = 1500;
         placeMark(cell, currentClass);
         clickSound.play();
         if (checkWin(currentClass)) {
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             swapTurns();
             if (circleTurn) {
-                setTimeout(computerMove, 500);
+                setTimeout(computerMove, timeOutSpeed);
             }
         }
     }
