@@ -179,10 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 winStrike.classList.add('win-vertical-3');
                 break;
             case 6:
-                winStrike.classList.add('win-diagonal-2');
+                winStrike.classList.add('win-diagonal-1');
                 break;
             case 7:
-                winStrike.classList.add('win-diagonal-1');
+                winStrike.classList.add('win-diagonal-2');
                 break;
         }
         boardElement.appendChild(winStrike);
