@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const winningMessageTextElement = winningMessageElement.querySelector('h2');
     const boardElement = document.querySelector('.board');
     
-    //sounds
+    // sounds
     const clickSound = new Audio('assets/sounds/cell-click.mp3')
     const gameOverSound = new Audio('assets/sounds/win-sound.mp3')
 
@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Players marks
     const X_CLASS = 'x';
     const CIRCLE_CLASS = 'circle';
+
+    // hover classes 
     const X_HOVER_CLASS = 'x-hover';
     const CIRCLE_HOVER_CLASS = 'circle-hover';
 
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     restartButtonElement.addEventListener('click', startGame);
 
-    // Start game
+    // Start game, clear all classes, switch turn to X, add event listeners for cells and cover class/remove hover class
     function startGame() {
         circleTurn = false;
         boardCells.forEach(cell => {
@@ -82,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
- 
+    
+    // sets hover class based on current player
     function setCellHoverClass(e) {
         const cell = e.target;
         if (!cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS)) {
@@ -94,20 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // removes all hover classes
     function removeCellHoverClass(e) {
         const cell = e.target;
         cell.classList.remove(X_HOVER_CLASS);
         cell.classList.remove(CIRCLE_HOVER_CLASS);
     }
 
+    // adds x or o to cell
     function placeMark(cell, currentClass) {
         cell.classList.add(currentClass);
     }
 
+    // switches from circle back to "X"
     function swapTurns() {
         circleTurn = !circleTurn;
     }
 
+    //check for winning combo
     function checkWin(currentClass) {
         return WINNING_COMBINATIONS.some((combination, combinationIndex) => {
             //change to const then create seperate loop and return
@@ -121,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // if all cells are full but no winning combo
     function isDraw() {
         return [...boardCells].every(cell => {
             return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS);
@@ -179,13 +187,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         boardElement.appendChild(winStrike);
     }
-
+    
+    // removes all win strikes if any
     function clearWinStrikes() {
         const winStrike = document.querySelectorAll('.win');
         winStrike.forEach(winStrike => winStrike.remove());
         
     }
 
+    // computer move chooses random number from index of empty cells
     function computerMove() {
         //define an empty cell
         const emptyCells = [...boardCells].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS));
